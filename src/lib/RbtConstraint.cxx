@@ -140,7 +140,7 @@ RbtDouble RbtConstraint::Score() const
   
   if (isexp){
       RbtDouble r;
-      r = (dr > 0.0) ? 4.18*a*(1-exp(-pow(dr,2)/b)) : 0.0;
+      r = (dr > 0.0) ? 4.18*a*(-exp(-pow(dr,2)/b)) : 0.0;
       //if (r != 0.0) cout << "Scoring with exp function: " << r << " dr: " << dr << endl;
       return r;
   }else{ //Score is zero up to the tolerance range, then quadratic beyond.
